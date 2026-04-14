@@ -57,7 +57,7 @@ export const generateStory = async (theme: Theme): Promise<string> => {
         return await generateWithRetry(prompt);
     } catch (error) {
         console.error("Error generating story:", error);
-        return "Oops! It seems our storyteller is taking a tiny nap because it's a bit overwhelmed right now. Please give it just a moment and try again, my love! 💕";
+        return `Oops! It seems our storyteller is taking a tiny nap. Error details: ${error instanceof Error ? error.message : String(error)}`;
     }
 };
 
